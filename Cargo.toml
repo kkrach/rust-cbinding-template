@@ -1,0 +1,10 @@
+#
+# Top level Caro file
+#
+
+[workspace]
+members = [
+	"example",
+	"raw_foo",
+	"safe_foo",
+]
