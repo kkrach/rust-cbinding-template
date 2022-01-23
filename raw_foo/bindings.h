@@ -1,7 +1,7 @@
 
-#ifndef WRAPPER_H
-#define WRAPPER_H
+#ifndef RUST_BINDINGS_H
+#define RUST_BINDINGS_H
 
 #include "libfoo/foo.h"
 
-#endif // WRAPPER_H
+#endif // RUST_BINDINGS_H
