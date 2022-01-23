@@ -64,18 +64,14 @@ pub fn foo_set_value(value : i32) {
 
 ## Example Application
 
-The example application uses the two creates:
+The example application uses the two creates.
 
+```rust
+unsafe { raw_foo::foo_set_value(13); }
+...
+safe_foo::foo_set_value(13);
 ```
-$ ./target/debug/example
-initial raw value: 42
-raw value after setting 13: 13
-raw value after reset: 42
-initial safe value: 42
-safe value after setting 13: 13
-safe value after reset: 42
-$
-```
+
 ## Unit Tests
 
 Each create defines tests for its methods:

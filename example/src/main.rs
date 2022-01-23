@@ -1,6 +1,4 @@
 
-extern crate raw_foo;
-
 //use raw_foo::*;
 //use safe_foo::*;
 
