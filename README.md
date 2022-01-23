@@ -2,7 +2,10 @@
 
 Template for creating RUST projects with code in C
 
-[[_TOC_]]
+ - [Raw Crate](#raw-crate)
+ - [Safe Crate](#safe-crate)
+ - [Example Application](#example-application)
+ - [Unit Tests](#unit-tests)
 
 ## Raw Crate
 
