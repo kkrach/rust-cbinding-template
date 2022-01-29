@@ -12,6 +12,8 @@
 #ifndef LIBFOO_FOO_H
 #define LIBFOO_FOO_H
 
+#include <stddef.h>
+#include <netinet/in.h>
 
 void foo_reset();
 int foo_get_value();
@@ -19,7 +21,7 @@ void foo_set_value(int value);
 
 
 struct bar {
-    int first;
+    size_t first;
     char second;
     char *third;
 };
@@ -28,7 +30,7 @@ const struct bar *foo_get_bar();
 void foo_set_bar(struct bar *value);
 
 enum zoo {
-    ZOO_A = 7,
+    ZOO_A = AF_INET6,
     ZOO_B,
     ZOO_C,
     ZOO_D
