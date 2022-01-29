@@ -21,6 +21,9 @@ fn main() {
 
     let bindings = bindgen::Builder::default()
         .header("bindings.h")
+        .raw_line("use cty;")
+        .ctypes_prefix("cty")
+        .use_core()
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
         .generate()
         .expect("Unable to generate bindings");
