@@ -12,8 +12,29 @@
 #ifndef LIBFOO_FOO_H
 #define LIBFOO_FOO_H
 
+
 void foo_reset();
 int foo_get_value();
 void foo_set_value(int value);
+
+
+struct bar {
+    int first;
+    char second;
+    char *third;
+};
+
+const struct bar *foo_get_bar();
+void foo_set_bar(struct bar *value);
+
+enum zoo {
+    ZOO_A = 7,
+    ZOO_B,
+    ZOO_C,
+    ZOO_D
+};
+
+enum zoo foo_get_zoo();
+void foo_set_zoo(enum zoo value);
 
 #endif // LIBFOO_FOO_H
