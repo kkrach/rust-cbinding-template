@@ -16,10 +16,11 @@
 
 typedef enum {
 	FOO_OK,
+	FOO_INVALID_ARGUMENT,
 	FOO_FILE_NOT_FOUND,
 	FOO_ERROR_READ,
 } FOO_Error;
 
-FOO_Error foo_read_file(const char *filename, char *buf, size_t buflen);
+FOO_Error foo_read_file(const char *filename, char *buf, size_t *buflen);
 
 #endif // LIBFOO_FOO_H
