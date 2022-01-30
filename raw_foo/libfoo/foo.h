@@ -27,6 +27,10 @@ struct bar {
 const struct bar *foo_get_bar();
 void foo_set_bar(struct bar *value);
 
+
+#define LOO_A 227
+#define LOO_B 0xFF00FF00
+
 enum zoo {
     ZOO_A = 7,
     ZOO_B,
