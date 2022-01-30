@@ -1,4 +1,6 @@
 
+#![no_std]
+
 extern crate raw_foo;
 
 pub fn foo_reset() {
