@@ -1,19 +1,20 @@
 
-//use raw_foo::*;
-//use safe_foo::*;
-
 fn main() {
-    unsafe {
-        println!("initial raw value: {}", raw_foo::foo_get_value());
-        raw_foo::foo_set_value(13);
-        println!("raw value after setting 13: {}", raw_foo::foo_get_value());
-        raw_foo::foo_reset();
-        println!("raw value after reset: {}", raw_foo::foo_get_value());
-    }
+	let args: Vec<String> = std::env::args().collect();
+	if args.len() != 2 {
+		println!("Error: Wrong argument count!");
+		println!("");
+		println!("Usage: {} INPUT_FILE", &args[0]);
+		std::process::exit(1);
+	}
 
-    println!("initial safe value: {}", safe_foo::foo_get_value());
-    safe_foo::foo_set_value(13);
-    println!("safe value after setting 13: {}", safe_foo::foo_get_value());
-    safe_foo::foo_reset();
-    println!("safe value after reset: {}", safe_foo::foo_get_value());
+	let filename = &args[1];
+	let mut content : Vec<u8> = vec![0; 20];
+    let result = safe_foo::foo_read_file(&filename, &mut content);
+	if ! result {
+		println!("foo_read_file returns {}", result);
+	}
+	for byte in content.iter() {
+		println!("{:#02x}", byte);
+	}
 }

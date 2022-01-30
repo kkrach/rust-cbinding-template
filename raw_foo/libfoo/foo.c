@@ -10,22 +10,29 @@
  */
 
 #include "foo.h"
+#include <stdio.h>
 
-#define FOO_VALUE_DEFAULT (42)
 
-static int foo_value = FOO_VALUE_DEFAULT;
-
-void foo_reset()
+FOO_Error foo_read_file(const char *filename, char *buf, size_t buflen)
 {
-	foo_value = FOO_VALUE_DEFAULT;
-}
+	FILE *file = NULL;
+	size_t read_bytes = 0;
 
-int foo_get_value()
-{
-	return foo_value;
-}
+	file = fopen(filename, "r");
+	if (NULL == file)
+	{
+		return FOO_FILE_NOT_FOUND;
+	}
+	while (!feof(file))
+	{
+		read_bytes += fread(buf, buflen, 1, file);
+		if (ferror(file))
+		{
+			fclose(file);
+			return FOO_ERROR_READ;
+		}
+	}
 
-void foo_set_value(int value)
-{
-	foo_value = value;
+	fclose(file);
+	return FOO_OK;
 }

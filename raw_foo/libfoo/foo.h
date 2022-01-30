@@ -12,8 +12,14 @@
 #ifndef LIBFOO_FOO_H
 #define LIBFOO_FOO_H
 
-void foo_reset();
-int foo_get_value();
-void foo_set_value(int value);
+#include <stddef.h>
+
+typedef enum {
+	FOO_OK,
+	FOO_FILE_NOT_FOUND,
+	FOO_ERROR_READ,
+} FOO_Error;
+
+FOO_Error foo_read_file(const char *filename, char *buf, size_t buflen);
 
 #endif // LIBFOO_FOO_H
