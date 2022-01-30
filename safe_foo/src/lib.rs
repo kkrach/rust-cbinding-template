@@ -1,5 +1,6 @@
 extern crate raw_foo;
 
+#[must_use]
 pub fn foo_read_file(filename: &str, content: &mut Vec<u8>) -> bool {
     let c_filename = std::ffi::CString::new(filename).expect("CString::new failed");
     let buffer = content.as_mut_ptr() as *mut _;
