@@ -29,7 +29,8 @@ void foo_set_bar(struct bar *value);
 
 
 #define LOO_A 227
-#define LOO_B 0xFF00FF00
+#define LOO_B 0x42
+#define LOO_C 0xFF00FF00
 
 enum zoo {
     ZOO_A = 7,
