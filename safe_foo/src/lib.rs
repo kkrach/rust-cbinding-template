@@ -7,13 +7,13 @@ pub fn foo_reset() {
 	}
 }
 
-pub fn foo_get_value() -> i32 {
+pub fn foo_get_value() -> u32 {
 	unsafe {
 		raw_foo::foo_get_value()
 	}
 }
 
-pub fn foo_set_value(value : i32) {
+pub fn foo_set_value(value : u32) {
 	unsafe {
 		raw_foo::foo_set_value(value);
 	}
