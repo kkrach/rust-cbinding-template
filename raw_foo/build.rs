@@ -14,7 +14,7 @@ fn main() {
         .expect("failed to execute process");
 
     // Add dependency to libfoo
-    println!("cargo:rustc-link-lib=static=foo");
+    println!("cargo:rustc-link-lib=dylib=foo");
     println!("cargo:rustc-link-search=raw_foo/libfoo");
 
     println!("cargo:rerun-if-changed=bindings.h");

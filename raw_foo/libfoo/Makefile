@@ -9,7 +9,7 @@ AR     := ar
 
 SRCS   := foo.c
 OBJS   := $(SRCS:.c=.o)
-TARGET := libfoo.a
+TARGET := libfoo.so
 
 CFLAGS += -Wall -Werror
 
@@ -19,7 +19,7 @@ default: all
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(AR) rcs $@ $^
+	$(CC) --shared -o $@ $^
 
 clean:
 	rm -rf $(TARGET) $(OBJS)
